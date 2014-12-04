@@ -3,9 +3,6 @@
 files="zsh/.zshrc
 zsh/.zshenv
 .vim/
-.screenrc
-.tcshrc
-.bashrc
 .gitconfig"
 
 good_color="\033[1;32m"
