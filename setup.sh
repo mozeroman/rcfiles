@@ -1,8 +1,8 @@
 #!/bin/sh
 
-files="zsh/.zshrc
-zsh/.zshenv
-.vim/
+files=".zshrc
+zsh/.
+.vimrc
 .gitconfig"
 
 good_color="\033[1;32m"
