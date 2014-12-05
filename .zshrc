@@ -1,0 +1,1 @@
+/home/namor/.zprezto/runcoms/zshrc
