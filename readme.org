@@ -4,6 +4,7 @@
 .
   I am trying to make it a portable solution for UNIX-like machine (Linux, FreeBSD, Cygwin, Mac OS X, etc.) and make it a reminder for myself if I have to install a new system.
 
+
 * Other rcfiles I use
 
 Those rcfiles are my favourites, people have higher understanding about tools they code. I don't find any reason not to use those tools to make things easier when I don't have time to learn that much. I would install them before using my rcfiles.
@@ -36,6 +37,38 @@ Old rcfiles will be backed up, after these configuration file being installed, s
 
 Remember to change the user data in .gitconfig (or delete it)
 
-* .zshrc and .zsh/
 
-* .vimrc
+* Files in rcfiles
+
+** setup.sh
+
+   shell commands to make links from .rcfile to ~/
+
+** .gitconfig
+
+   git settings, like vim as editor.
+
+** .zshrc and .zsh/
+   
+   make Zsh/Prezto better
+
+- .foragnoster.zsh
+  function used in agonster
+- .myfunctions.zsh
+  my sh functions, like copy()
+- .alias.zsh
+  my alias
+- .percol.zsh
+  percol in zsh, like C-r
+
+** .vimrc
+
+   my tiny vimrc, only for viewing and simple editing
+
+** .percol.d/rc.py
+
+   percol's emacs like key-binding and other recommended in [[https://github.com/mooz/percol][mooz/percol]].
+
+** .custom.el
+
+   emasc setting besides [[https://github.com/redguardtoo/emacs.d][redguardtoo/.emasc.d]].
