@@ -1,11 +1,8 @@
 #!/bin/sh
 
 files=".zshrc
-.zsh/.percol.zsh
-.zsh/.alias.zsh
-.zsh/.foragonster.zsh
-.zsh/.myfunction.zsh 
-.percol.d/rc.py
+.zsh/
+.percol.d/
 .vimrc
 .gitconfig"
 
@@ -157,23 +154,20 @@ if [ -d "$BACKUP_FILE_PATH" ]; then
     echo "Old configuration files are now in $HOME/.old_rcfiles/$BACKUP_DIR"
 fi
 
-printf "Do you want to install all vim plugins now? [Y/n] "
-answer=$(ask_user yn "${error_color}Please answer yes or no. [Y(es) / n(o)]${end_color} ")
+# printf "Do you want to install all vim plugins now? [Y/n] "
+# answer=$(ask_user yn "${error_color}Please answer yes or no. [Y(es) / n(o)]${end_color} ")
 
-case $answer in
-    [Yy] )
-        printf "Installing vundle plugin...\n"
-        git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        printf "Done\n"
-        printf "Installing other plugin...\n"
-        sleep 1
-        vim +PluginInstall +qall
-        ;;
-
-    [Nn] )
-        echo "vim plugin installation canceled"
-        ;;
-
-esac
-
-echo "Vim installation completed"
+# case $answer in
+#     [Yy] )
+#         printf "Installing vundle plugin...\n"
+#         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#         printf "Done\n"
+#         printf "Installing other plugin...\n"
+#         sleep 1
+#         vim +PluginInstall +qall
+#         ;;
+#     [Nn] )
+#         echo "vim plugin installation canceled"
+#         ;;
+# esac
+# echo "Vim installation completed"
