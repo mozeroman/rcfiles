@@ -1,11 +1,11 @@
 #!/bin/sh
 
 files=".zshrc
-zsh/.percol.zsh
-zsh/.alias.zsh
-zsh/.foragonster.zsh
-zsh/.myfunction.zsh 
-percol.d/rc.py
+.zsh/.percol.zsh
+.zsh/.alias.zsh
+.zsh/.foragonster.zsh
+.zsh/.myfunction.zsh 
+.percol.d/rc.py
 .vimrc
 .gitconfig"
 
