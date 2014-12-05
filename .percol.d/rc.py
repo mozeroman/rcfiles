@@ -1,5 +1,9 @@
 # Run command file for percol
 
+# By default, percol interprets input queries by users as string. If you prefer regular expression, try --match-method command line option.
+# $ percol --match-method regex
+
+
 # mutiple selection
 # percol.command.toggle_mark_and_next() (which is bound to C-SPC by default).
 # percol.command.mark_all() (bound to M-a), percol.command.unmark_all() (bound to M-e) and percol.command.toggle_mark_all() (反向选择M-t) are useful to mark / unmark all candidates at once.
