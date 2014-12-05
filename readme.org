@@ -1,0 +1,45 @@
+* My rcfiles collection 
+
+  Thanks to [[https://github.com/pi314][pi314]] and friends in nba/nctu, now I use github to manage my rcfiles. The setup.sh mostly copied from [[https://github.com/pi314/rcfiles][pi314's rcfiles]].
+.
+  I am trying to make it a portable solution for UNIX-like machine (Linux, FreeBSD, Cygwin, Mac OS X, etc.) and make it a reminder for myself if I have to install a new system.
+
+* Other rcfiles I use
+
+Those rcfiles are my favourites, people have higher understanding about tools they code. I don't find any reason not to use those tools to make things easier when I don't have time to learn that much. I would install them before using my rcfiles.
+
+  List:
+  
+  - Prezto for zsh
+  https://github.com/sorin-ionescu/prezto
+  - Agonster Prompt for Prezto (optional)
+  https://github.com/mozeroman/zsh.prompts
+  - Percol 
+  https://github.com/mooz/percol  
+  - Emacs
+  https://github.com/redguardtoo/emacs.d
+
+
+* Installation
+
+Download zip file from github or using the command below:
+
+- For everyone:
+
+  1. cd 
+  2. git clone https://github.com/mozeroman/rcfiles.git .rcfiles
+  3. sh ~/.rcfiles/setup.sh
+
+- Or ssh way for myself (change "mozeorman" to "yourusername"):
+
+  1. cd
+  2. git clone git@github.com:mozeroman/rcfiles.git .rcfiles
+  3. sh ~/.rcfiles/setup.sh
+
+Old rcfiles will be backed up, after these configuration file being installed, ``setup.sh`` will ask you if you want to install vim plugins.
+
+Remember to change the user data in ``.gitconfig`` (or delete it)
+
+* .zshrc and .zsh/
+
+* .vimrc
