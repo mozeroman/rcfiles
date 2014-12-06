@@ -5,6 +5,7 @@ files=".zshrc
 .percol.d/
 .vimrc
 .custom.el
+.myemacs.d/
 .gitconfig"
 
 good_color="\033[1;32m"
