@@ -45,7 +45,7 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 ** .gitconfig
 
-   git settings, using vim as editor.
+   git settings, using vim as editor
 
 ** .zshrc and .zsh/
    
