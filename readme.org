@@ -26,7 +26,7 @@ Download zip file from github or using the command below:
   2. git clone https://github.com/mozeroman/rcfiles.git .rcfiles
   3. sh ~/.rcfiles/setup.sh
 
-- Or ssh way for myself (change "mozeorman" to "yourusername"):
+- Or ssh way for myself (change [mozeorman] to [yourusername]):
 
   1. cd
   2. git clone git@github.com:mozeroman/rcfiles.git .rcfiles
@@ -66,7 +66,7 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 ** .percol.d/rc.py
 
-   percol's emacs like key-binding and other functions recommend in [[https://github.com/mooz/percol][mooz/percol]]
+   emacs like key-binding and other functions recommend in [[https://github.com/mooz/percol][mooz/percol]]
 
 ** .custom.el and .myemacs.d/
 
