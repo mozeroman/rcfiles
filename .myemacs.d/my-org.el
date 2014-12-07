@@ -1,4 +1,4 @@
-;;设置org-mobile 和 org-publish 和 agenda的文件仅仅设置为GTD.org
+;;设置MobileOrg 和 org-publish 和 agenda的文件仅仅设置为GTD.org
 
 (defvar dir-where-you-store-org-files "~/Dropbox/org/org/")
 (setq 
