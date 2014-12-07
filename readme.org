@@ -70,7 +70,7 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 ** .custom.el and .myemacs.d/
 
-   customize emasc setting besides [[https://github.com/redguardtoo/emacs.d][redguardtoo/emasc.d]]
+   customize emacs setting besides [[https://github.com/redguardtoo/emacs.d][redguardtoo/emacs.d]]
 
 - my-org.el
   setting up MobileOrg, org-publish and org-agenda links to GTD.org only
