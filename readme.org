@@ -80,6 +80,9 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
   setting up MobileOrg, org-publish and org-agenda links to GTD.org only
 - my-eim.el
   setting ,. for pageup/pagedown the input seletion bar
+- molokai-theme-kit.el
+  improve color-theme-molokai, edited from hbin/molokai-theme
+
 
 ** .vimperatorrc
 
