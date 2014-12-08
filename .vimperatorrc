@@ -1,0 +1,79 @@
+" 常用方法
+" 翻页快捷键 [[ ]]
+" hjkl gg G /
+" 下上翻半页    <C-j> <C-k>
+" 前进后退 HL
+" 前后标签 IO <C-,> <C-.>
+" 关闭标签 d
+" 记录网址并退出:wq
+" 刷新 r
+" 新开标签 t
+" 打开网址 o
+" 选择超链接 f + Number
+" 找到输入窗口 gi 在之前加数字2gi可以找到第二个输入窗口
+" Ctrl+i 可以在当前输入栏使用选择编辑器打开
+" u 重新打开之前关闭的tab
+" y 复制当前网址
+" p 打开剪贴板中的网址
+" zi 页面放大
+" zo 页面缩小
+" zz 恢复页面大小
+" :q 退出 退出全部:qa
+" :w 下载网页
+" c 进入firefox caret模式 使用hjkl和方向键移动光标
+" 在进入caret模式后再按v可以进入vim经典的选择区域模式
+" I 过滤某些网站,在该网站不使用vimperator
+
+
+"自定义firefox插件vimperator配置文件
+"建立的方法有两种
+"第一种是先用 :set 命令对各项设置进行设定
+"然后运行 :mkv 命令来自动生成配置文件
+"第二种是自己建立
+"Linux下在~/.vimperatorrc
+"Windows下在C:\Users\name\_vimperatorrc
+
+"默认输入工具 需要将工具加入Path环境变量
+"editor=gvim.exe -f
+
+"显示菜单栏，m菜单栏，T工具栏
+set guioptions=mT
+
+"Next Page and Previous Page超级的下一页,基本上是够用了.快捷键是[[和]]
+set nextpattern=\s*下一页|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|)$,^(>|),(>|)$,\\bmore\\b
+set previouspattern=\s*上一页|上一张|上一篇|上页|前页\s*,^\bprev|previous\b,\\bprev|previous\\b,^<$,^(<<|)$,^(<|),(<|)$
+
+"此项功能是自动补全.在命令行下的自动补全.
+"set wop=auto
+
+"命令行下拉菜单最多显示的条目数
+set maxitems=6
+
+"键映射
+"noremap不会对映射之后的键再映射，只要类似的情况都不能用map，要用noremap
+noremap j 9j
+noremap k 9k
+noremap h 9h
+noremap l 9l
+
+"下上翻半页
+map J <C-d>
+map K <C-u>
+map <C-j> <C-d>
+map <C-k> <C-u>
+
+"让某些快捷键失效，这些键不习惯而且用的少,还有C-z是将firefox直接terminate掉,不小心按到保存的内容就都没了.
+map A <Nop>
+map a <Nop>
+map <C-o> <Nop>
+map <C-i> <Nop>
+map <C-z> <Nop>
+
+"后退前进
+noremap H <C-o>
+noremap L <C-i>
+
+"前后标签
+map <C-,> gT
+map <C-.> gt
+
