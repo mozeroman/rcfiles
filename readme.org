@@ -8,12 +8,16 @@
 
 Those rcfiles are my favourites, people have higher understanding about tools they code. I cannot find any reason not to use those tools to make things easier when I do not have time to learn that much. I would install them before using my rcfiles.
 
-  As listed:
+  git as listed:
   
   - Prezto for zsh : https://github.com/sorin-ionescu/prezto
   - Agonster Prompt for Prezto (optional) : https://github.com/mozeroman/zsh.prompts
   - Percol : https://github.com/mooz/percol  
   - Emacs : https://github.com/redguardtoo/emacs.d
+
+  non-git plugins as listed:
+
+  - Vimperator for firefox
 
 
 * Installation
@@ -32,7 +36,7 @@ Download zip file from github or using the command below:
   2. git clone git@github.com:mozeroman/rcfiles.git .rcfiles
   3. sh ~/.rcfiles/setup.sh
 
-Old rcfiles will be backup in ~/.old_rcfiles/ with time, after these configuration file being installed. 
+Old rcfiles will be backuped in ~/.old_rcfiles/ with timestamp, after these configuration file being installed. 
 
 Remember to change the user data in .gitconfig (or delete it), to add/delete resource files.
 
@@ -77,3 +81,6 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 - my-eim.el
   setting ,. for pageup/pagedown the input seletion bar
 
+** .vimperatorrc
+
+   customizing key-bindings in vimperator for firefox

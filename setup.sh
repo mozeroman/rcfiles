@@ -4,6 +4,7 @@ files=".zshrc
 .zsh/
 .percol.d/
 .vimrc
+.vimperatorrc
 .custom.el
 .myemacs.d/
 .gitconfig"
