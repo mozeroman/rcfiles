@@ -7,6 +7,7 @@
     ;; the buffer name; the file name as a tool tip
     '(:eval (propertize "%b " 'face nil
         'help-echo (buffer-file-name)))
+
     ;; line and column
     "(" ;; '%02' to set to 2 chars at least; prevents flickering
     "%02l" "," "%01c"
@@ -15,9 +16,9 @@
     ") "
 
     ;; relative position, size of file
-    "[" (propertize "%p" 'face 'nil) "/" (propertize "%I" 'face 'nil) "] "
-
+    ;"[" (propertize "%p" 'face 'nil) "/" (propertize "%I" 'face 'nil) "] "
     ;; the current major mode for the buffer.
+
     "["
 
     '(:eval (propertize "%m" 'face nil
