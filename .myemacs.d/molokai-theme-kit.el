@@ -16,6 +16,7 @@
     ") "
 
     ;; relative position, size of file
+    ;; can be adding to /lisp/init-modeline.el and display window name
     ;"[" (propertize "%p" 'face 'nil) "/" (propertize "%I" 'face 'nil) "] "
     ;; the current major mode for the buffer.
 

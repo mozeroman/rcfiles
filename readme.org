@@ -18,6 +18,7 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   non-git plugins as listed:
 
   - Vimperator for firefox
+  - devilspie for applications automatic management to workspace
 
 
 * Installation
@@ -83,7 +84,11 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 - molokai-theme-kit.el
   improve color-theme-molokai, edited from hbin/molokai-theme
 
-
 ** .vimperatorrc
 
    customizing key-bindings in vimperator for firefox
+
+** .devilspie/
+
+   customizing devilspie with my usual applications
+   

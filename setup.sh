@@ -3,6 +3,7 @@
 files=".zshrc
 .zsh/
 .percol.d/
+.devilspie/
 .vimrc
 .vimperatorrc
 .custom.el

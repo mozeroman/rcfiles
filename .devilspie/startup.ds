@@ -1,0 +1,35 @@
+(if
+    (matches (window_name) ".*Vimperator$")
+    (begin
+       (unmaximize)
+       (set_workspace 2)
+       (maximize)
+    )
+)
+
+(if 
+    (matches (window_name) ".*Chromium$")
+    (begin
+        (unmaximize)
+        (set_workspace 6)
+        (maximize)
+    )
+)
+
+(if 
+    (is (application_name) "emacs")
+    (begin
+        (unmaximize)
+        (set_workspace 3)
+        (maximize)
+    )
+)
+
+
+;(if 
+;    (matches (window_name) ".*Skype")
+;    (begin
+;        (set_workspace 5)
+;    )
+;)
+
