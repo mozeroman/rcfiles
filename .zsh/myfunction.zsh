@@ -16,6 +16,7 @@ extract() {
            *.tbz2)     tar xf $1      ;;
            *.tgz)      tar xf $1      ;;
            *.zip)      unzip $1        ;;
+           *.7z)       7z x $1        ;;
            *.Z)        uncompress $1   ;;
            *)          echo "'$1' cannot be extracted via extract()" ;;
        esac
