@@ -36,5 +36,17 @@ copy() {
        fi
 }
 
+## a file selection copy function for xsel | percol
+scopy() {
+       if [ -f $1 ] ; then
+           case $1 in
+               *) percol $1 | xsel -b ;;
+           esac
+       else
+           echo "'$1' is not a valid file"  
+       fi
+}
+
+
 ## Do not save same history
 setopt hist_ignore_all_dups
