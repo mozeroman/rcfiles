@@ -32,7 +32,7 @@ copy() {
                *) cat $1 | xsel -b ;;
            esac
        else
-           echo "'$1' is not a valid file"  
+           echo "'$1' is not a valid file"
        fi
 }
 
@@ -43,10 +43,30 @@ scopy() {
                *) percol $1 | xsel -b ;;
            esac
        else
-           echo "'$1' is not a valid file"  
+           echo "'$1' is not a valid file"
        fi
 }
 
+## a function for selection rm | percol
+rms() {
+    rm $(ls | percol)
+}
+
+###problem accour with function-name scp comflict with ^R
+## a function for selection cp | percol
+cps() {
+    cp $(ls | percol)
+}
+
+## a function for selection mv | percol
+mvs() {
+    mv $(ls | percol) -rf
+}
+
+## a function for selection cd | percol
+cds() {
+    cd $(ls | percol)
+}
 
 ## Do not save same history
 setopt hist_ignore_all_dups
