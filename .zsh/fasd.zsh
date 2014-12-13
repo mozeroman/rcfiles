@@ -11,6 +11,7 @@ eval "$(fasd --init auto)"
 # alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 # alias zz='fasd_cd -d -i' # cd with interactive selection
 
+### find a way to combine code in fd fa ff
 ## fasd history save in ~/.fasd
 ## one direction only
 ## useful dirs, a function combine fasd -d&percol and other program, sudo su might be useful
@@ -31,7 +32,7 @@ fd() {
        esac
    else
        ##will act like cd
-       $1 $temp $2
+       $temp
    fi
 }
 
@@ -51,7 +52,7 @@ ff() {
        esac
    else
        ##will act like cd
-       $1 $temp $2
+       $temp
    fi
 }
 
@@ -71,6 +72,6 @@ fa() {
        esac
    else
        ##will act like cd
-       $1 $temp $2
+       $temp
    fi
 }
