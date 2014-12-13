@@ -1,7 +1,6 @@
 #!/bin/sh
 
 files=".zshrc
-.fasd
 .zsh/
 .percol.d/
 .devilspie/
