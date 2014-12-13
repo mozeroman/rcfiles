@@ -14,6 +14,8 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   - Agonster Prompt for Prezto (optional) : https://github.com/mozeroman/zsh.prompts
   - Percol : https://github.com/mooz/percol  
   - Emacs : https://github.com/redguardtoo/emacs.d
+  - Fasd : https://github.com/clvv/fasd
+
 
   non-git plugins as listed:
 
@@ -56,14 +58,17 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
    
    make Zsh/Prezto better
 
-- .foragnoster.zsh
+- foragnoster.zsh
   function used in agonster
-- .myfunctions.zsh
+- myfunctions.zsh
   my sh functions, like copy()
-- .alias.zsh
+- alias.zsh
   my personal alias
-- .percol.zsh
+- percol.zsh
   percol combine with zsh, like C-r searching .history
+- fasd.zsh
+  fasd combine with zsh, making fd ff fa function to quick select files/dir for other programs
+
 
 ** .vimrc
 
@@ -91,4 +96,6 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 ** .devilspie/
 
    customizing devilspie with my usual applications
+   
+
    

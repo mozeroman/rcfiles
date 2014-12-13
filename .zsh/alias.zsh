@@ -1,4 +1,5 @@
 alias emacs='emacs -nw'
+alias e='emacs -nw'
 alias minecraft='~/.minecraft/HMCL-2.0.9-proguard-Linux.sh'
 alias moc='mocp'
 alias sai="sudo apt-get install"
