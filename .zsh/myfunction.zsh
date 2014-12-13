@@ -47,25 +47,42 @@ scopy() {
        fi
 }
 
-## a function for selection rm | percol
-rms() {
-    rm $(ls | percol)
-}
+# ## a function for selection rm | percol
+# rms() {
+#     rm $(ls | percol) -rf
+# }
+# ###problem accour with function-name scp comflict with ^R
+# ## a function for selection cp | percol
+# cps() {
+#     cp -i $(ls | percol) $1
+# }
+# ## a function for selection mv | percol
+# mvs() {
+#     mv -i $(ls | percol) $1
+# }
+# ## a function for selection cd | percol
+# cds() {
+#     cd $(ls | percol)
+# }
+# ## a function for selection extract | percol
+# extracts() {
+#     extract $(ls | percol)
+# }
 
-###problem accour with function-name scp comflict with ^R
-## a function for selection cp | percol
-cps() {
-    cp $(ls | percol)
-}
-
-## a function for selection mv | percol
-mvs() {
-    mv $(ls | percol) -rf
-}
-
-## a function for selection cd | percol
-cds() {
-    cd $(ls | percol)
+## a function combine ls&percol and other program, sudo su might be useful
+lss() {
+   if [ -f $1 ] ; then
+       case $1 in
+           emacs)  emacs -nw  $(ls | percol) $2 ;;
+           rm) rm $(ls | percol) -rf ;;
+           cp) cp -i $(ls | percol) $2;; ## ?? -i worldn't ask, just force
+           mv) mv -i $(ls | percol) $2;; ## ?? -i worldn't ask, just force
+           *)  $1 $(ls | percol) $2 ;;
+       esac
+   else
+       ##will act like cd
+       $1 $(ls | percol) $2
+   fi
 }
 
 ## Do not save same history
