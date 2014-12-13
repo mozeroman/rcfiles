@@ -91,7 +91,7 @@ lss() {
        esac
    else
        ##will act like cd
-       $1 $dir $2
+       $dir
    fi
 }
 
