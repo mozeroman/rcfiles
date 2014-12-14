@@ -83,7 +83,8 @@ lss() {
    #dir=sed 'N;s/\n/:/' $dir;
    if [ $1 ] ; then
        case $1 in
-           emacs)  emacs -nw  $dir $2;;
+           e)  emacs -nw  $dir $2;;
+           v)  vim  $dir $2;;
            rm) rm -rf $dir ;;
            cp) cp -i $dir $2;; ## -i worldn't ask, just force
            mv) mv -i $dir $2;; ## -i worldn't ask, just force
