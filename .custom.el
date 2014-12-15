@@ -1,4 +1,4 @@
-;; 自定prefix
+;;自定prefix
 (define-prefix-command 'ctrl-z-map)
 (global-set-key (kbd "C-z") 'ctrl-z-map)
 
@@ -8,6 +8,9 @@
 (load "my-org.el") ;;增加org-mobile和org-publish相关配置
 ;(load "molokai-theme-kit.el") ;;自定义color-theme-molokai
 
-;; ALL backup goto ~/.backups instead in the current directory
+;;ALL backup goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backupsforEmacs"))))
 
+;;M-n M-p in memory of C-n C-p
+(global-set-key [(meta n)] 'next-line)
+(global-set-key [(meta p)] 'previous-line)
