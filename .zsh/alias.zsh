@@ -1,5 +1,6 @@
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
+export EDITOR="e" ## Make emacsclient -t -a "" as the default editor
 alias minecraft='~/.minecraft/HMCL-2.0.9-proguard-Linux.sh'
 alias moc='mocp'
 alias sau="sudo apt-get update"
@@ -13,4 +14,3 @@ alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias devilspie="devilspie -a & sleep 1 && pkill -f 'devilspie -a'"
 alias lls="lss"
-
