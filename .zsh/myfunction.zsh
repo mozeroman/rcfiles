@@ -98,4 +98,3 @@ lss() {
 
 ## Do not save same history
 setopt hist_ignore_all_dups
-

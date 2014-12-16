@@ -1,6 +1,6 @@
-;;自定prefix
-(define-prefix-command 'ctrl-z-map)
-(global-set-key (kbd "C-z") 'ctrl-z-map)
+;; ;;自定prefix
+;; (define-prefix-command 'ctrl-z-map)
+;; (global-set-key (kbd "C-z") 'ctrl-z-map)
 
 ;;增加载入的配置文件夹路径,对应.emacs.d/lisp里面的配置文件
 (add-to-list 'load-path "~/.myemacs.d")

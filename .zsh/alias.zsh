@@ -1,6 +1,6 @@
-alias e='emacsclient -t'
+alias e='emacsclient -nw'
 alias ec='emacsclient -c'
-export EDITOR="e" ## Make emacsclient -t -a "" as the default editor
+export EDITOR="e" ## Make emacsclient -nw as the default editor
 alias minecraft='~/.minecraft/HMCL-2.0.9-proguard-Linux.sh'
 alias moc='mocp'
 alias sau="sudo apt-get update"
