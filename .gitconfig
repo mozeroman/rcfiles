@@ -15,5 +15,5 @@
     ui = true
 
 [core]
-    editor = vim
+    editor = emacsclient -nw 
     pager = less -r

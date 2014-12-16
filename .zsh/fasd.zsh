@@ -23,7 +23,7 @@ fd() {
    #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacs -nw $temp $2 ;;
+           e) emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
            cp) cp -i $temp $2;; ## -i worldn't ask, just force
@@ -43,7 +43,7 @@ ff() {
    #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacs -nw $temp $2 ;;
+           e) emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
            cp) cp -i $temp $2;; ## -i worldn't ask, just force
@@ -63,7 +63,7 @@ fa() {
    #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacs -nw $temp $2 ;;
+           e) emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
            cp) cp -i $temp $2;; ## -i worldn't ask, just force

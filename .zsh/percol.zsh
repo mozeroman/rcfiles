@@ -1,4 +1,4 @@
-###percol are very good for 
+###percol are very good for
 ##compdef percol
 #local context state line
 #typeset -A opt_args

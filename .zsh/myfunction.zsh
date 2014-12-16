@@ -83,7 +83,7 @@ lss() {
    #dir=sed 'N;s/\n/:/' $dir;
    if [ $1 ] ; then
        case $1 in
-           e)  emacs -nw  $dir $2;;
+           e)  emacsclient -nw $dir $2;;
            v)  vim  $dir $2;;
            rm) rm -rf $dir ;;
            cp) cp -i $dir $2;; ## -i worldn't ask, just force
@@ -98,3 +98,18 @@ lss() {
 
 ## Do not save same history
 setopt hist_ignore_all_dups
+
+## Make emacsclient -t -a "" as the default editor
+export EDITOR="e"
+
+# run emacs daemon
+[[ -z $(ps -C 'emacs --daemon' -o pid=) ]] && emacsd
+
+# add kill emacs function
+function kill-emacs(){
+    emacsclient -e "(kill-emacs)"
+    emacs_pid=$( ps -C 'emacs --daemon' -o pid= )
+    if [[ -n "${emacs_pid}" ]];then
+        kill -9 "${emacs_pid}"
+    fi
+}

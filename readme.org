@@ -4,6 +4,7 @@
 
   A portable solution for UNIX-like machine (Linux, FreeBSD, Cygwin, Mac OS X, etc.) and a reminder for everyone when to install a new system. 
 
+
 * Other rcfiles I use
 
 Those rcfiles are my favourites, people have higher understanding about tools they code. I cannot find any reason not to use those tools to make things easier when I do not have time to learn that much. I would install them before using my rcfiles.
@@ -56,16 +57,16 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 ** .zshrc and .zsh/
    
-   make Zsh/Prezto better
+  trying to make Zsh/Prezto work better, .zshrc only links to files in .zsh/ for better organizing
 
 - foragnoster.zsh
   function used in agonster
 - myfunctions.zsh
-  my sh functions, like copy()
+  my shell settings & shell functions, combine programs as a single command, example: copy(), lls()
 - alias.zsh
   my personal alias
 - percol.zsh
-  percol combine with zsh, like C-r searching .history
+  percol-settings in zsh from offical guide, e.g.: C-r searching .history
 - fasd.zsh
   fasd combine with zsh, making fd ff fa function to quick select files/dir for other programs
 

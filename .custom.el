@@ -6,7 +6,7 @@
 (add-to-list 'load-path "~/.myemacs.d")
 (load "my-eim.el") ;;修改使用eim',''.'切换输入框翻页
 (load "my-org.el") ;;增加org-mobile和org-publish相关配置
-;(load "molokai-theme-kit.el") ;;自定义color-theme-molokai
+(load "emacs-daemon.el") ;;使用emacs作为daemon打开,提高打开速度
 
 ;;ALL backup goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backupsforEmacs"))))

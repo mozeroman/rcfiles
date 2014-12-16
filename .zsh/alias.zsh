@@ -1,5 +1,5 @@
-alias emacs='emacs -nw'
-alias e='emacs -nw'
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
 alias minecraft='~/.minecraft/HMCL-2.0.9-proguard-Linux.sh'
 alias moc='mocp'
 alias sau="sudo apt-get update"
