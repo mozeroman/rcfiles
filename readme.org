@@ -23,7 +23,7 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   - Vimperator for firefox
   - devilspie for linux - a window manager at startup
 
-
+    
 * Installation
 
 Download zip file from github or using the command below:
@@ -85,8 +85,6 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 - my-org.el
   setting up MobileOrg, org-publish and org-agenda links to GTD.org only
-- my-eim.el
-  setting ,. for pageup/pagedown the input seletion bar
 - molokai-theme-kit.el
   improve color-theme-molokai, edited from hbin/molokai-theme
 
