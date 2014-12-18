@@ -15,5 +15,5 @@
     ui = true
 
 [core]
-    editor = emacsclient -nw 
+    editor = TERM=xterm-256color emacsclient -nw 
     pager = less -r

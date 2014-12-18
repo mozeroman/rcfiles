@@ -1,6 +1,5 @@
-alias e='emacsclient -nw'
-alias ec='emacsclient -c'
-export EDITOR="e" ## Make emacsclient -nw as the default editor
+alias e='TERM=xterm-256color emacsclient -nw -a ""'
+alias ec='emacsclient -c -a ""'
 alias minecraft='~/.minecraft/HMCL-2.0.9-proguard-Linux.sh'
 alias moc='mocp'
 alias sau="sudo apt-get update"
@@ -13,4 +12,4 @@ alias logout="xfce4-session-logout"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias devilspie="devilspie -a & sleep 1 && pkill -f 'devilspie -a'"
-alias lls="lss"
+alias lls="(lss)"

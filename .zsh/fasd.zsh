@@ -13,25 +13,23 @@ eval "$(fasd --init auto)"
 
 ### find a way to combine code in fd fa ff
 ## fasd history save in ~/.fasd
-## one direction only
+## work one direction/file only
 ## useful dirs, a function combine fasd -d&percol and other program, sudo su might be useful
 fd() {
    temp=$(fasd -d | percol);
    temp=${temp##* }; #only display dir
    ##this one will do the same--only display dir
-   #temp=${temp##*/};
-   #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacsclient -nw $temp $2 ;;
+           e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;; ## -i worldn't ask, just force
-           mv) mv -i $temp $2;; ## -i worldn't ask, just force
+           cp) cp -i $temp $2;;
+           mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
    else
-       ##will act like cd
+       ##will act as cd $temp
        $temp
    fi
 }
@@ -40,18 +38,17 @@ fd() {
 ff() {
    temp=$(fasd -f | percol);
    temp=${temp##* }; #only display dir
-   #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacsclient -nw $temp $2 ;;
+           e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;; ## -i worldn't ask, just force
-           mv) mv -i $temp $2;; ## -i worldn't ask, just force
+           cp) cp -i $temp $2;;
+           mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
    else
-       ##will act like cd
+       ##will act as cd $temp
        $temp
    fi
 }
@@ -60,18 +57,17 @@ ff() {
 fa() {
    temp=$(fasd -a | percol);
    temp=${temp##* }; #only display dir
-   #temp="/"$temp;
    if [ $1 ] ; then
        case $1 in
-           e) emacsclient -nw $temp $2 ;;
+           e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;; ## -i worldn't ask, just force
-           mv) mv -i $temp $2;; ## -i worldn't ask, just force
+           cp) cp -i $temp $2;;
+           mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
    else
-       ##will act like cd
+       ##will act as cd $temp
        $temp
    fi
 }

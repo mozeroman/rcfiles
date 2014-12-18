@@ -69,32 +69,35 @@ extracts() {
     extract $(ls | percol)
 }
 
-## wouldn't seperate $dir and it just a WHOLE-STRING, so only one file can be seleted
-## a function combine ls&percol and other program, sudo su might be useful
+## a function combine ls&percol and other program, sudo su might be useful, single file only
 lss() {
    dir=$(ls | percol);
+   #can sub '\n' with ' ' but '* *' was recognized as A command with ' ' in between
    #dir=$(ls | percol | tr '\n' ' ');
-   #echo ${dir/\n/ };
-   #echo $dir
    #echo $dir | tr '\n' ' ';
-   #rdir=$($dir|sed 'N;s/\n//g');
-   #rdir=sed 'N;s/\n/ /g' $dir;
    #rdir=$($dir | tr '\n' ‘ ’ );
-   #dir=sed 'N;s/\n/:/' $dir;
    if [ $1 ] ; then
        case $1 in
-           e)  emacsclient -nw $dir $2;;
+           e)  TERM=xterm-256color emacsclient -nw $dir $2;;
            v)  vim  $dir $2;;
            rm) rm -rf $dir ;;
-           cp) cp -i $dir $2;; ## -i worldn't ask, just force
-           mv) mv -i $dir $2;; ## -i worldn't ask, just force
-           *)  $1 $dir $2 ;; ##will act like cd
+           cp) cp -i $dir $2;;
+           mv) mv -i $dir $2;;
+           *)  $1 $dir $2 ;;
        esac
    else
-       ##will act like cd
+       ##will act as cd
        $dir
    fi
 }
 
 ## Do not save same history
 setopt hist_ignore_all_dups
+
+##set TERM=xterm-256color emacsclient -nw -a "" as default editor
+export EDITOR="e"
+
+# a sample to start program with zsh, and wouldn't start again when program running
+alias emacsd='(emacs --daemon &)'
+# run emacs daemon
+[[ -z $(ps -C 'emacs --daemon' -o pid=) ]] && emacsd

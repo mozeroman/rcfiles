@@ -8,7 +8,7 @@
 )
 
 (if 
-    (is (application_name) "emacs")
+    (is (application_name) "emacs24")
     (begin
         (unmaximize)
         (set_workspace 3)
