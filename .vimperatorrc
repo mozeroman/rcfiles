@@ -76,4 +76,5 @@ noremap L <C-i>
 "前后标签
 map <C-,> gT
 map <C-.> gt
-
+map a gT
+map s gt

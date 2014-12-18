@@ -1,8 +1,8 @@
 ;;设置MobileOrg 和 org-publish 和 agenda的文件仅仅设置为GTD.org
 
 (defvar dir-where-you-store-org-files "~/Dropbox/org/org/")
-(setq 
- org-agenda-files 
+(setq
+ org-agenda-files
  (mapcar (lambda (x) (concat dir-where-you-store-org-files x))
          '("GTD.org")))
 
@@ -24,11 +24,11 @@
     type=\"text/css\"/>")
         ("note-static"
          :base-directory "~/Dropbox/org/org"
-         :publishing-directory 
+         :publishing-directory
          :recursive t
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|swf\\|zip\\|gz\\|txt\\|el"
          :publishing-function org-publish-attachment)
-        ("note" 
+        ("note"
          :components ("note-org" "note-static")
          :author "mozeroman@gmail.com"
          )))
@@ -36,14 +36,14 @@
 
 ;;这个是设置org-mobile同步的设置,注意中文使用utf-8不然别用
 ;需要导出的原始.org文件
-(setq org-mobile-files (list "~/Dropbox/org/org/GTD.org")) 
+(setq org-mobile-files (list "~/Dropbox/org/org/GTD.org"))
 ;平时.org文件在的文件夹
 (setq org-directory "~/Dropbox/org/org/")
-;从mobile端传回的回馈,仍需手动修改原始.org文件 
+;从mobile端传回的回馈,仍需手动修改原始.org文件
 (setq org-mobile-inbox-for-pull "~/Dropbox/org/org/inbox.org")
 ;设置dropbox同步的.org文件位置
 ;(setq org-mobile-directory "~/Dropbox/应用/MobileOrg/")  ;;iphone/itouch使用者路径,由于界面没人性放弃了...
-(setq org-mobile-directory "~/Dropbox/org/MobileOrg/") 
+(setq org-mobile-directory "~/Dropbox/org/MobileOrg/")
 ;使用md5工具计算,不然mobile端不同步
 (defcustom org-mobile-checksum-binary (or (executable-find "~/Dropbox/md5sums-1.2/md5sums.exe") (or (executable-find "md5sum")))
  "Executable used for computing checksums of agenda files."
