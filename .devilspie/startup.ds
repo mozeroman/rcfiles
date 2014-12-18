@@ -7,8 +7,17 @@
     )
 )
 
+; (if 
+;     (is (application_name) "emacs24")
+;     (begin
+;         (unmaximize)
+;         (set_workspace 3)
+;         (maximize)
+;     )
+; )
+
 (if 
-    (is (application_name) "emacs24")
+    (matches (window_name) ".*Chromium$")
     (begin
         (unmaximize)
         (set_workspace 3)
@@ -16,20 +25,11 @@
     )
 )
 
-(if 
-    (matches (window_name) ".*Chromium$")
-    (begin
-        (unmaximize)
-        (set_workspace 6)
-        (maximize)
-    )
-)
 
-
-;(if 
-;    (matches (window_name) ".*Skype")
-;    (begin
-;        (set_workspace 5)
-;    )
-;)
+; (if 
+;     (matches (window_name) ".*Skype")
+;     (begin
+;         (set_workspace 5)
+;     )
+; )
 
