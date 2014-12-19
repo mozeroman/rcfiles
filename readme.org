@@ -86,7 +86,7 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 - my-org.el
   setting up MobileOrg, org-publish and org-agenda links to GTD.org only
 - emacs-daemon.el
-  setting up defualt emacsclient -c -a "" 
+  setting up defualt emacsclient -c
 - yanpy.txt
   a better py.txt save in .eim/py.txt with emoticon
 
