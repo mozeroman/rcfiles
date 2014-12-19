@@ -85,8 +85,10 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 - my-org.el
   setting up MobileOrg, org-publish and org-agenda links to GTD.org only
-- molokai-theme-kit.el
-  improve color-theme-molokai, edited from hbin/molokai-theme
+- emacs-daemon.el
+  setting up defualt emacsclient -c -a "" 
+- yanpy.txt
+  a better py.txt save in .eim/py.txt with emoticon
 
 ** .vimperatorrc
 
