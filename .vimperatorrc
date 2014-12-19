@@ -37,7 +37,7 @@
 "editor=gvim.exe -f
 
 "显示菜单栏，m菜单栏，T工具栏
-set guioptions=mT
+"set guioptions=mT
 
 "Next Page and Previous Page超级的下一页,基本上是够用了.快捷键是[[和]]
 set nextpattern=\s*下一页|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|)$,^(>|),(>|)$,\\bmore\\b
