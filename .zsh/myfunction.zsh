@@ -54,7 +54,7 @@ rms() {
 ###problem accour with function-name scp comflict with ^R
 ## a function for selection cp | percol
 cps() {
-    cp -i $(ls | percol) $1
+    cp -i -r $(ls | percol) $1
 }
 ## a function for selection mv | percol
 mvs() {
@@ -81,7 +81,7 @@ lss() {
            e)  TERM=xterm-256color emacsclient -nw $dir $2;;
            v)  vim  $dir $2;;
            rm) rm -rf $dir ;;
-           cp) cp -i $dir $2;;
+           cp) cp -i -r $dir $2;;
            mv) mv -i $dir $2;;
            *)  $1 $dir $2 ;;
        esac

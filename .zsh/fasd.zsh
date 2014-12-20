@@ -24,7 +24,7 @@ fd() {
            e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;;
+           cp) cp -i -r $temp $2;;
            mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
@@ -43,7 +43,7 @@ ff() {
            e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;;
+           cp) cp -i -r $temp $2;;
            mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
@@ -62,7 +62,7 @@ fa() {
            e) TERM=xterm-256color emacsclient -nw $temp $2 ;;
            v) vim $temp $2 ;;
            rm) rm $temp -rf ;;
-           cp) cp -i $temp $2;;
+           cp) cp -i -r $temp $2;;
            mv) mv -i $temp $2;;
            *)  $1 $temp $2 ;;
        esac
