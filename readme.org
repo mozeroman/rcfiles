@@ -98,6 +98,5 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
    customizing devilspie with my usual applications
    
 
-   
 ** .config/awesome/rc.lua
    rc.lua for awesome window manager, may use it later

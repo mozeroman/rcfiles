@@ -7,20 +7,20 @@
     )
 )
 
-; (if 
-;     (is (application_name) "emacs24")
-;     (begin
-;         (unmaximize)
-;         (set_workspace 3)
-;         (maximize)
-;     )
-; )
+(if 
+    (is (application_name) "emacs24")
+    (begin
+        (unmaximize)
+        (set_workspace 3)
+        (maximize)
+    )
+)
 
 (if 
     (matches (window_name) ".*Chromium$")
     (begin
         (unmaximize)
-        (set_workspace 3)
+        (set_workspace 6)
         (maximize)
     )
 )

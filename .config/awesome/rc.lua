@@ -1,3 +1,6 @@
+-- manual using command below:
+-- mkdir ~/config/awesome; cd ~/.config/awesome; ln -s ~/.rcfiles/.config/awesome/rc.lua
+
 -- Need
 --      transset-df
 --

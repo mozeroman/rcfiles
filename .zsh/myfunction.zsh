@@ -101,3 +101,6 @@ export EDITOR="e"
 alias emacsd='(emacs --daemon &)'
 # run emacs daemon
 [[ -z $(ps -C 'emacs --daemon' -o pid=) ]] && emacsd
+
+# # run devilspie but wait for secs
+# (sleep 16) && devilspie
