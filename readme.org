@@ -70,7 +70,6 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 - fasd.zsh
   fasd combine with zsh, making fd ff fa function to quick select files/dir for other programs
 
-
 ** .vimrc
 
    my tiny vimrc, only for viewing and simple editing
@@ -100,3 +99,5 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
    
 
    
+** .config/awesome/rc.lua
+   rc.lua for awesome window manager, may use it later
