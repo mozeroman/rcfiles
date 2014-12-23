@@ -21,7 +21,7 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   non-git plugins as listed:
 
   - Vimperator for firefox
-  - devilspie for linux - a window manager at startup
+  - devilspie for linux - window placement software (I use it at startup with .devilspie/startup.sh)
 
     
 * Installation
