@@ -4,6 +4,24 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
 # extract multi-type files
+open() {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.gif) firefox   $1      ;;
+           *.chm) firefox   $1      ;;
+           *.pdf) evince    $1 &     ;;
+           *.png) ristretto $1 &     ;;
+           *.jpg) ristretto $1 &     ;;
+           *.org) e $1      ;;
+           *.mp4) vlc $1      ;;
+           *)          echo "'$1' cannot be opened via open()" ;;
+       esac
+   else
+       echo "'$1' is not a valid file"
+   fi
+}
+
+# extract multi-type files
 extract() {
    if [ -f $1 ] ; then
        case $1 in
