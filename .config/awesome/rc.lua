@@ -1,6 +1,3 @@
--- manual using command below:
--- mkdir ~/config/awesome; cd ~/.config/awesome; ln -s ~/.rcfiles/.config/awesome/rc.lua
-
 -- Need
 --      transset-df
 --
@@ -45,7 +42,7 @@ run_once("nm-applet")
 -- }}}
 
 -- {{{ Font Setting -----------------------------------------------------------
-awesome.font = "WenQuanYi Hei Mono 12"
+awesome.font = "LiHei Pro 12"
 -- }}} ------------------------------------------------------------------------
 
 -- {{{ Error handling
