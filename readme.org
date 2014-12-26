@@ -89,9 +89,12 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 - yanpy.txt
   a better py.txt save in .eim/py.txt with emoticon
 
-** .vimperatorrc
+** .vimperatorrc and .vimperator/plugin/
 
    customizing key-bindings in vimperator for firefox
+
+- _smooziee.js
+  vimperator jk smooth scroll
 
 ** .devilspie/
 
@@ -100,3 +103,4 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
 ** .config/awesome/rc.lua
    rc.lua for awesome window manager, may use it later
+   
