@@ -6,7 +6,6 @@ files=".zshrc
 .devilspie/
 .vimrc
 .vimperatorrc
-.vimperator/
 .custom.el
 .myemacs.d/
 .gitconfig"
