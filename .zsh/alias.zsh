@@ -1,5 +1,5 @@
 alias e='TERM=xterm-256color emacsclient -nw -a ""'
-alias ec='emacsclient -c -a ""'
+alias ec='emacsclient -c -a "" &'
 alias cdb='cd ..'
 alias minecraft='cd ~/.minecraft/; ~/.minecraft/HMCL-2.0.9-proguard-Linux.sh &; cd ~;'
 alias moc='mocp'
