@@ -16,12 +16,18 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   - Percol : https://github.com/mooz/percol  
   - Emacs : https://github.com/redguardtoo/emacs.d
   - Fasd : https://github.com/clvv/fasd
+  - Lain for Awesome : https://github.com/copycat-killer/lain
+  - Vicious for Awesome : http://git.sysphere.org/vicious/about/
+
+
 
   non-git plugins as listed:
 
   - Vimperator for firefox
-  - devilspie for linux - window placement software (I use it at startup with .devilspie/startup.sh)
+  - devilspie for xfce4 - window placement software (I use it at startup with .devilspie/startup.sh)
   - transset-df for transparent-window
+  - awesome for linux - awesome window manager
+
 
 
 * Installation
@@ -100,9 +106,13 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
    customizing devilspie with my usual applications
    
-** .config/awesome/rc.lua
+** .config/awesome/
 
-   rc.lua for awesome window manager, may use it later
+   Thanks to [[https://github.com/wdv4758h][dv]], whom I copied & learned my original config with awesome from.
+
+   special function within:
+- autostartup/delay_autostartup for terminals
+- wired transparent & volumn matching & useful panel & etc. from dv
    
 ** .asoundrc
    
