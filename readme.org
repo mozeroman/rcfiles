@@ -4,7 +4,7 @@
 
   A portable solution for UNIX-like machine (Linux, FreeBSD, Cygwin, Mac OS X, etc.) and a reminder for everyone when to install a new system. 
 
-
+  
 * Other rcfiles I use
 
 Those rcfiles are my favourites, people have higher understanding about tools they code. I cannot find any reason not to use those tools to make things easier when I do not have time to learn that much. I would install them before using my rcfiles.
@@ -17,13 +17,13 @@ Those rcfiles are my favourites, people have higher understanding about tools th
   - Emacs : https://github.com/redguardtoo/emacs.d
   - Fasd : https://github.com/clvv/fasd
 
-
   non-git plugins as listed:
 
   - Vimperator for firefox
   - devilspie for linux - window placement software (I use it at startup with .devilspie/startup.sh)
+  - transset-df for transparent-window
 
-    
+
 * Installation
 
 Download zip file from github or using the command below:
@@ -100,7 +100,10 @@ Remember to change the user data in .gitconfig (or delete it), to add/delete res
 
    customizing devilspie with my usual applications
    
-
 ** .config/awesome/rc.lua
+
    rc.lua for awesome window manager, may use it later
    
+** .asoundrc
+   
+   defualt sound card setting for aslamixer/amixer

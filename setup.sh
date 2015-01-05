@@ -8,6 +8,7 @@ files=".zshrc
 .vimperatorrc
 .custom.el
 .myemacs.d/
+.asoundrc
 .gitconfig"
 
 good_color="\033[1;32m"
