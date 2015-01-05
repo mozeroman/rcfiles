@@ -8,7 +8,7 @@
 # percol.command.toggle_mark_and_next() (which is bound to C-SPC by default).
 # percol.command.mark_all() (bound to M-a), percol.command.unmark_all() (bound to M-e) and percol.command.toggle_mark_all() (反向选择M-t) are useful to mark / unmark all candidates at once.
 
-# XDDDDDD and color prompt 
+# XDDDDDD and color prompt
 percol.view.PROMPT  = ur"<bold><magenta> XDDDDDD </magenta></bold> %q"
 
 percol.view.CANDIDATES_LINE_BASIC    = ("on_default", "default")
