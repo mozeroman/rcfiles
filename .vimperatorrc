@@ -49,12 +49,12 @@ set previouspattern=\s*上一页|上一张|上一篇|上页|前页\s*,^\bprev|pr
 "命令行下拉菜单最多显示的条目数
 set maxitems=6
 
-"键映射
-"noremap不会对映射之后的键再映射，只要类似的情况都不能用map，要用noremap
-noremap j 9j
-noremap k 9k
-noremap h 9h
-noremap l 9l
+""键映射
+""noremap不会对映射之后的键再映射，只要类似的情况都不能用map，要用noremap
+"noremap j 2j
+"noremap k 2k
+"noremap h 2h
+"noremap l 2l
 
 "下上翻半页
 map J <C-d>
