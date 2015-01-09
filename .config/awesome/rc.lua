@@ -35,49 +35,41 @@ function run_once(cmd)
   if firstspace then
      findme = cmd:sub(0, firstspace-1)
   end
+  --local screen = 1
+
+  -- try to use, not work
+  -- awful.util.spawn_with_shell("pgrep -f -u $USER " .. findme .. " > /dev/null || (" .. cmd .. ")")
+
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
-
-function run_once_test(prg,arg_string,pname,screen)
-   if not prg then
-      do return nil end
-   end
-   if not pname then
-      pname = prg
-   end
-
-   if not arg_string then
-      awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
-   else
-      awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. " ".. arg_string .."' || (" .. prg .. " " .. arg_string .. ")",screen)
-   end
+  -- ps aux | awk '{print $11}' | grep firefox
+  -- awful.util.spawn_with_shell("(ps -C " ..cmd.. "-o pid=) || (" ..cmd.. ")")
 end
 
 -- {{{ Delay autostart applications
+-- function delay_run_once(cmd, sleepytime)
 function delay_run_once(cmd)
   findme = cmd
   firstspace = cmd:find(" ")
   if firstspace then
      findme = cmd:sub(0, firstspace-1)
   end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null ||(sleep 3 && (" .. cmd .. "))")
-end
 
--- {{{ Autostart applications
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-     findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+  local sleepytime = 3 -- "3" also work
+  awful.util.spawn_with_shell("pgrep -u $USER -x '" .. findme .. "' || (sleep " ..sleepytime.. " && (" .. cmd .. "))")
+
+  -- -- try to use, not working
+  -- awful.util.spawn_with_shell("pgrep -u $USER -f " .. findme .. " > /dev/null || (sleep 3 && (" .. cmd .. "))")
+
 end
 
 run_once("nm-applet")
+run_once("tlp start")
 run_once("fcitx")
+run_once("dropbox start")
 -- run_once_test("firefox", "startup", nil, 1)
 run_once("firefox")
 run_once("chromium-browser")
+-- run_once_test("chromium-browser", "www", nil, 1)
 delay_run_once("terminator")
 delay_run_once("guake")
 
@@ -118,7 +110,7 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/default/theme.lua")
 -- }}} ------------------------------------------------------------------------
 
 -- default terminal and editor
-terminal = "urxvtc"
+terminal = "guake"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 -- modkey
@@ -133,15 +125,15 @@ modkey = "Mod4"
 local layouts =
 {
     -- delete useless layouts
-    awful.layout.suit.tile,               -- 1 (tile.right)
+    -- awful.layout.suit.tile,               -- 1 (tile.right)
     awful.layout.suit.tile.left,          -- 2
-    awful.layout.suit.tile.bottom,        -- 3
-    -- awful.layout.suit.tile.top,           --
+    --awful.layout.suit.tile.bottom,        -- 3
+    awful.layout.suit.tile.top,           --
     -- awful.layout.suit.fair,               --
     -- awful.layout.suit.fair.horizontal,    --
     -- awful.layout.suit.spiral,             --
     -- awful.layout.suit.spiral.dwindle,     --
-    awful.layout.suit.max,                -- 4
+    -- awful.layout.suit.max,                -- 4
     -- awful.layout.suit.max.fullscreen,     --
     -- awful.layout.suit.magnifier,          --
     awful.layout.suit.floating            -- 5
@@ -163,7 +155,7 @@ for s = 1, screen.count() do
     tags[s] = awful.tag(
         {"1", "2", "3", "4", "5", "6", "7", "8", "9"},
         s,
-        awful.layout.suit.floating
+        awful.layout.suit.tile.top
         ,
         { layouts[2], layouts[2], layouts[2],
           layouts[2], layouts[2], layouts[2],
@@ -173,15 +165,15 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "Logout choose", 'lubuntu-logout'},
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
+-- -- {{{ Menu
+-- -- Create a laucher widget and a main menu
+-- myawesomemenu = {
+--    { "manual", terminal .. " -e man awesome" },
+--    { "edit config", editor_cmd .. " " .. awesome.conffile },
+--    { "Logout choose", 'lubuntu-logout'},
+--    { "restart", awesome.restart },
+--    { "quit", awesome.quit }
+-- }
 
 awful.menu.menu_keys = { up    = { "k", "Up" }, down  = { "j", "Down" },
                          enter = { "Right" }, back  = { "h", "Left" },
@@ -189,16 +181,25 @@ awful.menu.menu_keys = { up    = { "k", "Up" }, down  = { "j", "Down" },
                          close = { "q", "Escape" },
                        }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu,
-                                        beautiful.awesome_icon },
-                                    { "Terminal", terminal },
-                                    { "Vim", "urxvt -e vim" },
-                                    { "emcas", "urxvt -e emacs" },
-                                    { "ranger", "urxvt -e ranger" },
-                                    { "alsamixer", "urxvt -e alsamixer" },
-                                    { "www", "chromium" }
+mymainmenu = awful.menu({ items = {
+                             { "manual", terminal .. " -e man awesome" },
+                             { "edit config", editor_cmd .. " " .. awesome.conffile },
+                             { "Logout choose", 'lubuntu-logout'},
+                             { "restart", awesome.restart },
+                             { "quit", awesome.quit }
                                   }
                         })
+
+-- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu,
+--                                         beautiful.awesome_icon },
+--                                     { "Terminal", terminal },
+--                                     { "Vim", "urxvt -e vim" },
+--                                     { "emcas", "urxvt -e emacs" },
+--                                     { "ranger", "urxvt -e ranger" },
+--                                     { "alsamixer", "urxvt -e alsamixer" },
+--                                     { "www", "chromium" }
+--                                   }
+--                         })
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -466,10 +467,20 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "d",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
-    -- dynamic change transparency (need "transset-df")
-    -- "Next" is PageDown, "Prior" is PageUp
-    awful.key({ modkey }, "Prior", function (c) awful.util.spawn("transset-df --actual --dec 0.1") end),
-    awful.key({ modkey }, "Next", function (c) awful.util.spawn("transset-df --actual --inc 0.1") end),
+    -- self modify short-cuts
+    awful.key({ modkey }, "e", function () awful.util.spawn_with_shell("thunar") end),
+    awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("firefox") end),
+    awful.key({ modkey }, "c", function () awful.util.spawn_with_shell("chromium-browser") end),
+    awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("skype") end),
+    awful.key({ modkey }, "t", function () awful.util.spawn_with_shell("terminator") end),
+    awful.key({ modkey }, "g", function () awful.util.spawn_with_shell("steam") end),
+
+    -- -- dynamic change transparency (need "transset-df")
+    -- -- "Next" is PageDown, "Prior" is PageUp
+    -- awful.key({ modkey }, "Prior", function (c) awful.util.spawn("transset-df --actual --dec 0.1") end),
+    -- awful.key({ modkey }, "Next", function (c) awful.util.spawn("transset-df --actual --inc 0.1") end),
+    awful.key({ modkey }, "Prior", function (c) client.focus.opacity = client.focus.opacity - 0.1 end),
+    awful.key({ modkey }, "Next", function (c) client.focus.opacity = client.focus.opacity + 0.1 end),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -599,7 +610,7 @@ end
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
     local temp
-    if i < 7 then
+    if i < 6 then
        temp = 9
     else
        temp = 10

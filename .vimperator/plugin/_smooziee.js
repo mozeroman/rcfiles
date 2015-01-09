@@ -94,10 +94,32 @@ let self = liberator.plugins.smooziee = (function(){
   );
   mappings.addUserMap(
     [modes.NORMAL],
+    ["<c-d>"],
+    "Smooth scroll down",
+    function(count){
+      self.smoothScrollBy(getScrollAmount() * (count || 3));
+    },
+    {
+      count: true
+    }
+  );
+  mappings.addUserMap(
+    [modes.NORMAL],
     ["k"],
     "Smooth scroll up",
     function(count){
       self.smoothScrollBy(getScrollAmount() * -(count || 1));
+    },
+    {
+      count: true
+    }
+  );
+  mappings.addUserMap(
+    [modes.NORMAL],
+    ["<c-u>"],
+    "Smooth scroll up",
+    function(count){
+      self.smoothScrollBy(getScrollAmount() * -(count || 3));
     },
     {
       count: true
@@ -122,15 +144,21 @@ let self = liberator.plugins.smooziee = (function(){
   var win;
   var interval;
 
-  function getScrollAmount() window.eval(liberator.globalVariables.smooziee_scroll_amount || '400');
+  function getScrollAmount() window.eval(liberator.globalVariables.smooziee_scroll_amount || '300');
 
   function smoothScroll(moment) {
-    if (moment > 0)
-      moment = Math.floor(moment / 2);
-    else
-      moment = Math.ceil(moment / 2);
+    var _moment_div = liberator.globalVariables.smooziee_moment_div || 2;
 
-    win.scrollBy(0, moment);
+    if (moment > 0) {
+      slice = Math.floor(moment / _moment_div);
+      moment -= slice;
+    }
+    else {
+      slice = Math.ceil(moment / _moment_div);
+      moment -= slice;
+    }
+
+    win.scrollBy(0, slice);
 
     if (Math.abs(moment) < 1) {
       setTimeout(makeScrollTo(win.scrollX, destY), interval);

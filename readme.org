@@ -25,7 +25,6 @@ Those rcfiles are my favourites, people have higher understanding about tools th
 
   - Vimperator for firefox
   - devilspie for xfce4 - window placement software (I use it at startup with .devilspie/startup.sh)
-  - transset-df for transparent-window
   - awesome for linux - awesome window manager
 
 
