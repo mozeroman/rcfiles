@@ -467,13 +467,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "d",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
-    -- self modify short-cuts
+    -- -- self modify short-cuts
     awful.key({ modkey }, "e", function () awful.util.spawn_with_shell("thunar") end),
-    awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("firefox") end),
-    awful.key({ modkey }, "c", function () awful.util.spawn_with_shell("chromium-browser") end),
-    awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("skype") end),
-    awful.key({ modkey }, "t", function () awful.util.spawn_with_shell("terminator") end),
-    awful.key({ modkey }, "g", function () awful.util.spawn_with_shell("steam") end),
+    -- awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("firefox") end),
+    -- awful.key({ modkey }, "c", function () awful.util.spawn_with_shell("chromium-browser") end),
+    -- awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("skype") end),
+    -- awful.key({ modkey }, "t", function () awful.util.spawn_with_shell("terminator") end),
+    -- awful.key({ modkey }, "g", function () awful.util.spawn_with_shell("steam") end),
 
     -- -- dynamic change transparency (need "transset-df")
     -- -- "Next" is PageDown, "Prior" is PageUp

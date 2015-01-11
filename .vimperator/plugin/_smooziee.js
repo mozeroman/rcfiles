@@ -28,7 +28,7 @@ var INFO = xml`
   <h3 tag="smooziee_example">Example</h3>
   <p>Set scroll amount is 300px and interval is 10ms.</p>
   <code><ex><![CDATA[
-    let g:smooziee_scroll_amount="300"
+    let g:smooziee_scroll_amount="50"
     let g:smooziee_scroll_interval="10"
   ]]></ex></code>
   <h3 tag="smooziee_API">API</h3>
@@ -60,7 +60,7 @@ var INFO = xml`
   <h3 tag="smooziee_example">設定例</h3>
   <p>スクロール量を300pxに、インターバルを10msに設定します。</p>
   <code><ex><![CDATA[
-    let g:smooziee_scroll_amount="300"
+    let g:smooziee_scroll_amount="50"
     let g:smooziee_scroll_interval="10"
   ]]></ex></code>
   <h3 tag="smooziee_API">API</h3>
@@ -68,8 +68,8 @@ var INFO = xml`
   <code>smooziee.smoothScrollBy(amount);</code>
   <p>Example</p>
   <code><ex><![CDATA[
-    :js liberator.plugins.smooziee.smoothScrollBy(600)
-    :js liberator.plugins.smooziee.smoothScrollBy(-600)
+    :js liberator.plugins.smooziee.smoothScrollBy(300)
+    :js liberator.plugins.smooziee.smoothScrollBy(-300)
   ]]></ex></code>
   <h3 tag="soomziee_ToDo">ToDo</h3>
   <ul>
@@ -94,10 +94,10 @@ let self = liberator.plugins.smooziee = (function(){
   );
   mappings.addUserMap(
     [modes.NORMAL],
-    ["<c-d>"],
+    ["<c-j>"],
     "Smooth scroll down",
     function(count){
-      self.smoothScrollBy(getScrollAmount() * (count || 3));
+      self.smoothScrollBy(getScrollAmount() * (count || 2));
     },
     {
       count: true
@@ -116,10 +116,10 @@ let self = liberator.plugins.smooziee = (function(){
   );
   mappings.addUserMap(
     [modes.NORMAL],
-    ["<c-u>"],
+    ["<c-k>"],
     "Smooth scroll up",
     function(count){
-      self.smoothScrollBy(getScrollAmount() * -(count || 3));
+      self.smoothScrollBy(getScrollAmount() * -(count || 2));
     },
     {
       count: true
