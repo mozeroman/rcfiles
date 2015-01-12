@@ -6,16 +6,33 @@ export QT_IM_MODULE=xim
 # extract multi-type files
 open() {
    if [ -f $1 ] ; then
-       case $1 in
-           *.doc) libreoffice   $1 & ;;
-           *.odt) libreoffice   $1 & ;;
-           *.gif) firefox   $1       ;;
-           *.chm) firefox   $1       ;;
-           *.pdf) evince    $1 &     ;;
-           *.png) ristretto $1 &     ;;
-           *.jpg) ristretto $1 &     ;;
-           *.org) e $1      ;;
-           *.mp4) vlc $1      ;;
+       newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
+       case $newstr in
+           *.doc)  libreoffice   $1 & ;;
+           *.docx) libreoffice   $1 & ;;
+           *.odt)  libreoffice   $1 & ;;
+           *.ppt)  libreoffice   $1 & ;;
+           *.pptx) libreoffice   $1 & ;;
+           *.xls)  libreoffice   $1 & ;;
+           *.xlsx) libreoffice   $1 & ;;
+           *.gif)  firefox       $1   ;;
+           *.chm)  firefox       $1   ;;
+           *.pdf)  evince        $1 & ;;
+           *.png)  ristretto     $1 & ;;
+           *.jpg)  ristretto     $1 & ;;
+           *.jpeg) ristretto     $1 & ;;
+           *.tif)  ristretto     $1 & ;;
+           *.tiff) ristretto     $1 & ;;
+           *.org)  e             $1   ;;
+           *.rm)   vlc           $1   ;;
+           *.mp4)  vlc           $1   ;;
+           *.mov)  vlc           $1   ;;
+           *.wmv)  vlc           $1   ;;
+           *.mpg)  vlc           $1   ;;
+           *.dat)  vlc           $1   ;;
+           *.mpeg) vlc           $1   ;;
+           *.avi)  vlc           $1   ;;
+           *.avi)  vlc           $1   ;;
            *)          echo "'$1' cannot be opened via open()" ;;
        esac
    else
@@ -26,7 +43,8 @@ open() {
 # extract multi-type files
 extract() {
    if [ -f $1 ] ; then
-       case $1 in
+       newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
+       case $newstr in
            *.tar.bz2)  tar xf $1      ;;
            *.tar.gz)   tar xf $1      ;;
            *.bz2)      bunzip2 $1      ;;
@@ -48,7 +66,8 @@ extract() {
 ## I learn from above to program a file copy function for xsel
 copy() {
        if [ -f $1 ] ; then
-           case $1 in
+           newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
+           case $newstr in
                *) cat $1 | xsel -b ;;
            esac
        else
@@ -59,7 +78,8 @@ copy() {
 ## a file selection copy function for xsel | percol
 scopy() {
        if [ -f $1 ] ; then
-           case $1 in
+           newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
+           case $newstr in
                *) percol $1 | xsel -b ;;
            esac
        else
@@ -97,7 +117,8 @@ lss() {
    #echo $dir | tr '\n' ' ';
    #rdir=$($dir | tr '\n' ‘ ’ );
    if [ $1 ] ; then
-       case $1 in
+       newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
+       case $newstr in
            e)  TERM=xterm-256color emacsclient -nw $dir $2;;
            v)  vim  $dir $2;;
            rm) rm -rf $dir ;;
