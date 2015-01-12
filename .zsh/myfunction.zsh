@@ -7,8 +7,10 @@ export QT_IM_MODULE=xim
 open() {
    if [ -f $1 ] ; then
        case $1 in
-           *.gif) firefox   $1      ;;
-           *.chm) firefox   $1      ;;
+           *.doc) libreoffice   $1 & ;;
+           *.odt) libreoffice   $1 & ;;
+           *.gif) firefox   $1       ;;
+           *.chm) firefox   $1       ;;
            *.pdf) evince    $1 &     ;;
            *.png) ristretto $1 &     ;;
            *.jpg) ristretto $1 &     ;;
