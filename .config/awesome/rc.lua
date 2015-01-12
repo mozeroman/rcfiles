@@ -1,3 +1,4 @@
+local debug_mode = 0
 -- Need
 --      transset-df
 --
@@ -62,6 +63,8 @@ function delay_run_once(cmd)
 
 end
 
+if (debug_mode) then
+else
 run_once("nm-applet")
 run_once("tlp start")
 run_once("fcitx")
@@ -72,6 +75,7 @@ run_once("chromium-browser")
 -- run_once_test("chromium-browser", "www", nil, 1)
 delay_run_once("terminator")
 delay_run_once("guake")
+end
 
 -- }}}
 

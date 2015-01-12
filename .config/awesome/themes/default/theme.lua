@@ -5,7 +5,7 @@
 theme = {}
 
 -- theme.font          = "sans 8"
-theme.font = "LiHei Pro 9"
+theme.font = "WenQuanYi Micro Hei Mono 10"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
