@@ -1,4 +1,4 @@
-local debug_mode = 0
+local debug_mode = false
 -- Need
 --      transset-df
 --
@@ -124,6 +124,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+-- modkey = "lock"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -466,9 +467,11 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
+
     awful.key({ modkey,           }, "a",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "d",  awful.tag.viewnext       ),
+
+    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     -- -- self modify short-cuts
@@ -629,14 +632,16 @@ for i = 1, 9 do
                            awful.tag.viewonly(tag)
                         end
                   end),
-        awful.key({ "Control" }, "#" .. i + temp,
-                  function ()
-                        local screen = mouse.screen
-                        local tag = awful.tag.gettags(screen)[i]
-                        if tag then
-                           awful.tag.viewonly(tag)
-                        end
-                  end),
+
+        -- awful.key({ "Control" }, "#" .. i + temp,
+        --           function ()
+        --                 local screen = mouse.screen
+        --                 local tag = awful.tag.gettags(screen)[i]
+        --                 if tag then
+        --                    awful.tag.viewonly(tag)
+        --                 end
+        --           end),
+
         awful.key({ modkey, "Control" }, "#" .. i + temp,
                   function ()
                       local screen = mouse.screen
