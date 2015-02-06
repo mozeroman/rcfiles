@@ -227,8 +227,8 @@ end
 -- network usage
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net,
-                '<span color="#CC9090">⇩${wlan0 down_kb}</span>' ..
-                '<span color="#7F9F7F">⇧${wlan0 up_kb}</span>', 3)
+                '<span color="#CC9090">⇩${eth0 down_kb}</span>' ..
+                '<span color="#7F9F7F">⇧${eth0 up_kb}</span>', 3)
 
 -- Textclock
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
@@ -633,14 +633,14 @@ for i = 1, 9 do
                         end
                   end),
 
-        -- awful.key({ "Control" }, "#" .. i + temp,
-        --           function ()
-        --                 local screen = mouse.screen
-        --                 local tag = awful.tag.gettags(screen)[i]
-        --                 if tag then
-        --                    awful.tag.viewonly(tag)
-        --                 end
-        --           end),
+        awful.key({ "Control" }, "#" .. i + temp,
+                  function ()
+                        local screen = mouse.screen
+                        local tag = awful.tag.gettags(screen)[i]
+                        if tag then
+                           awful.tag.viewonly(tag)
+                        end
+                  end),
 
         awful.key({ modkey, "Control" }, "#" .. i + temp,
                   function ()

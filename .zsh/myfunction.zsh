@@ -76,7 +76,7 @@ copy() {
 }
 
 ## a file selection copy function for xsel | percol
-scopy() {
+copys() {
        if [ -f $1 ] ; then
            newstr=`tr '[A-Z]' '[a-z]' <<<"$1"`;
            case $newstr in
@@ -107,6 +107,10 @@ cds() {
 ## a function for selection extract | percol
 extracts() {
     extract $(ls | percol)
+}
+## a function for selection extract | percol
+opens() {
+    open $(ls | percol)
 }
 
 ## a function combine ls&percol and other program, sudo su might be useful, single file only
