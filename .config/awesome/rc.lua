@@ -72,6 +72,7 @@ run_once("dropbox start")
 -- run_once_test("firefox", "startup", nil, 1)
 run_once("firefox")
 run_once("chromium-browser")
+run_once("blueman-manager")
 -- run_once_test("chromium-browser", "www", nil, 1)
 delay_run_once("terminator")
 delay_run_once("guake")
@@ -160,7 +161,7 @@ for s = 1, screen.count() do
     tags[s] = awful.tag(
         {"1", "2", "3", "4", "5", "6", "7", "8", "9"},
         s,
-        awful.layout.suit.tile.top
+        awful.layout.suit.floating
         ,
         { layouts[2], layouts[2], layouts[2],
           layouts[2], layouts[2], layouts[2],
@@ -739,6 +740,8 @@ awful.rules.rules = {
       properties = {tag = tags[1][3]}}, -- ,switchtotag=true}
     { rule = { class = "Terminator" },
       properties = {tag = tags[1][4]}}, -- ,switchtotag=true}
+    { rule = { class = "blueman-manager" },
+      properties = {tag = tags[1][5]}}, -- ,switchtotag=true}
 }
 -- }}} ------------------------------------------------------------------------
 

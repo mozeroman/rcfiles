@@ -108,9 +108,13 @@ cds() {
 extracts() {
     extract $(ls | percol)
 }
-## a function for selection extract | percol
+## a function for selection open | percol
 opens() {
     open $(ls | percol)
+}
+## a function for selection emacsclient -nw | percol
+es() {
+    e $(ls | percol)
 }
 
 ## a function combine ls&percol and other program, sudo su might be useful, single file only
