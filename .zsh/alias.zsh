@@ -1,4 +1,5 @@
 alias e='TERM=xterm-256color emacsclient -nw -a ""'
+alias se='sudo TERM=xterm-256color emacsclient -nw -a ""'
 alias ec='emacsclient -c -a "" &'
 alias eterm='TERM=xterm-256color emacs -nw'
 alias cdb='cd ..'
