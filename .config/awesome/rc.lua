@@ -68,6 +68,7 @@ else
 run_once("nm-applet")
 run_once("tlp start")
 run_once("fcitx")
+run_once("gnome-screensaver")
 run_once("dropbox start")
 -- run_once_test("firefox", "startup", nil, 1)
 run_once("firefox")
@@ -161,7 +162,7 @@ for s = 1, screen.count() do
     tags[s] = awful.tag(
         {"1", "2", "3", "4", "5", "6", "7", "8", "9"},
         s,
-        awful.layout.suit.floating
+        awful.layout.suit.tile.top
         ,
         { layouts[2], layouts[2], layouts[2],
           layouts[2], layouts[2], layouts[2],
@@ -228,8 +229,8 @@ end
 -- network usage
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net,
-                '<span color="#CC9090">⇩${eth0 down_kb}</span>' ..
-                '<span color="#7F9F7F">⇧${eth0 up_kb}</span>', 3)
+                '<span color="#CC9090">⇩${wlan1 down_kb}</span>' ..
+                '<span color="#7F9F7F">⇧${wlan1 up_kb}</span>', 3)
 
 -- Textclock
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
@@ -740,8 +741,10 @@ awful.rules.rules = {
       properties = {tag = tags[1][3]}}, -- ,switchtotag=true}
     { rule = { class = "Terminator" },
       properties = {tag = tags[1][4]}}, -- ,switchtotag=true}
-    { rule = { class = "blueman-manager" },
-      properties = {tag = tags[1][5]}}, -- ,switchtotag=true}
+
+    -- { rule = { name = ".*blueman-manager$" },
+    --   properties = {tag = tags[1][5]}}, -- ,switchtotag=true}
+
 }
 -- }}} ------------------------------------------------------------------------
 
