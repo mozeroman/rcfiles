@@ -36,21 +36,21 @@
 "默认输入工具 需要将工具加入Path环境变量
 "editor=gvim.exe -f
 
-"显示菜单栏，m菜单栏，T工具栏
+"显示菜单栏,m菜单栏,T工具栏
 "set guioptions=mT
 
-"Next Page and Previous Page超级的下一页,基本上是够用了.快捷键是[[和]]
+"Next Page and Previous Page超级的下一页,基本上是够用了,快捷键是[[和]]
 set nextpattern=\s*下一页|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|)$,^(>|),(>|)$,\\bmore\\b
 set previouspattern=\s*上一页|上一张|上一篇|上页|前页\s*,^\bprev|previous\b,\\bprev|previous\\b,^<$,^(<<|)$,^(<|),(<|)$
 
-"此项功能是自动补全.在命令行下的自动补全.
+"此项功能是自动补全,在命令行下的自动补全.
 "set wop=auto
 
 "命令行下拉菜单最多显示的条目数
 set maxitems=6
 
 "键映射
-"noremap不会对映射之后的键再映射，只要类似的情况都不能用map，要用noremap
+"noremap不会对映射之后的键再映射,只要类似的情况都不能用map,要用noremap
 noremap j 9j
 noremap k 9k
 noremap h 9h
@@ -62,7 +62,7 @@ map K <C-u>
 map <C-j> <C-d>
 map <C-k> <C-u>
 
-"让某些快捷键失效，这些键不习惯而且用的少,还有C-z是将firefox直接terminate掉,不小心按到保存的内容就都没了.
+"让某些快捷键失效,这些键不习惯而且用的少,还有C-z是将firefox直接terminate掉,不小心按到保存的内容就都没了.
 map A <Nop>
 map a <Nop>
 map <C-o> <Nop>
