@@ -1,4 +1,5 @@
 alias e='TERM=xterm-256color emacsclient -nw -a ""'
+alias gtd='TERM=xterm-256color emacsclient -nw -a "" ~/Box/org/org/GTD.org'
 alias se='sudo TERM=xterm-256color emacsclient -nw -a ""'
 alias ec='emacsclient -c -a "" &'
 alias eterm='TERM=xterm-256color emacs -nw'
