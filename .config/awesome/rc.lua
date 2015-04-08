@@ -740,7 +740,7 @@ awful.rules.rules = {
     { rule = { class = "Chromium-browser" },
       properties = {tag = tags[1][3]}}, -- ,switchtotag=true}
     { rule = { class = "Terminator" },
-      properties = {tag = tags[1][4]}}, -- ,switchtotag=true}
+      properties = {tag = tags[2][4]}}, -- ,switchtotag=true}
 
     -- { rule = { name = ".*blueman-manager$" },
     --   properties = {tag = tags[1][5]}}, -- ,switchtotag=true}
